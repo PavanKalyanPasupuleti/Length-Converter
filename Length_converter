@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <title>converter</title>
+        <style>
+            #start{
+            margin-left:500px;
+            margin-top: -80px;
+            }
+            #adj1{
+                text-align: center;
+                margin-left:200px;
+                margin-top: -60px;
+            }
+            #a:hover{
+                color:red;
+            }
+            #a:link{
+                color: red;
+            }
+            #a:visited{
+                color: red;
+            }
+            a:active{
+                color:red;
+            }
+
+            #box1{
+                    width: 300px;
+                    border: 15px solid green;
+                    padding: 0px 500px 200px;
+                    margin: 0px 20px 50px;
+                    padding-left: 80px;
+            }
+        </style>
+    </head>
+    <body style="background-color:blue">
+    <center>    <img src="https://c8.alamy.com/comp/G34C4J/chicago-skyline-chicago-downtown-skyline-at-dusk-G34C4J.jpg" width="800px" height="400px"></center>
+        <div id="box1">
+            <h1 style="color:blue">select units<br/></h1>
+
+            <a href="#"><h1 style="color:aqua; background-color:black; width: 80px">From</h1></a>
+
+                <select name="u1" id="car">
+                    <option value="mm">Millimeters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="me">Meters</option>
+                    <option value="km">Kilometers</option>
+                </select>
+            
+            <a href="#"><h1 style="color:aqua; background-color:black; width: 50px">To</h1></a>
+
+                <select name="u2" id="cars">
+                    <option value="mm">Millimeters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="me">Meters</option>
+                    <option value="km">Kilometers</option>
+                </select>
+
+            <input type="number" placeholder="Enter value to convert" id="adj1" style="height:40px;font-size:14pt;"/>
+           <div id="start">
+                <button onclick="fun()"> 
+                    <h1 style="color:lime;  border:5px solid aqua box; background-color:black; padding:5px 5px 5px"> START </h2>
+                </button>
+           </div>
+        </div>
+    </body>
+</html>
+<script>
+    function fun()
+    {
+
+        var val1=document.getElementById('car').value;
+        var val2=document.getElementById('cars').value;
+        var length=parseInt(document.getElementById('adj1').value);
+
+        if((isNaN(length)))
+        {
+            alert('Please Enter Distance');
+        }
+        else{
+            if(val1=='mm')
+            {
+                if(val2==val1)
+                {
+                    alert(length+' mm');
+                    exit(0);
+                }
+                else if(val2=='cm')
+                {
+                    alert(length/10+' cm');
+                    exit(0);
+                }
+                else if(val2=='me')
+                {
+                    alert(length/1000,+' me');
+                    exit(0); 
+                }
+                else(val2=='km')
+                {
+                    alert(length/1000000+' km');
+                    exit(0);
+                }
+            }
+
+            if(val1=='cm')
+            {
+                if(val2=='mm')
+                {
+                    alert(length*10+' mm');
+                    exit(0);
+                }
+                else if(val2==val1)
+                {
+                    alert(length,+' cm');
+                    exit(0);
+                }
+                else if(val2=='me')
+                {
+                    alert(length/100,+' me');
+                    exit(0);
+                }
+                else(val2=='km')
+                {
+                    alert(length/100000,+' km');
+                    exit(0);
+                }
+            }   
+
+            if(val1=='me')
+            {
+                if(val2=='mm')
+                {
+                    alert(length*1000+' mm');
+                    exit(0);
+                }
+                else if(val2=='cm')
+                {
+                    alert(length*100+ 'cm');
+                    exit(0);
+                }
+                else if(val2==val1)
+                {
+                    alert(length/1000+' me');
+                    exit(0);
+                }
+                else(val2=='km')
+                {
+                    alert(length/1000+' km');
+                    exit(0);
+                }
+            }
+
+            if(val1=='km')
+            {
+                if(val2=='mm')
+                {
+                    alert(length*1000000,+' mm');
+                    exit(0);
+                }
+                else if(val2=='cm')
+                {
+                    alert(length*100000+' cm');
+                    exit(0);
+                }
+                else if(val2=='me')
+                {
+                    alert(length*1000+' me');
+                    exit(0);
+                }
+                else
+                {
+                    alert(length/1000000+' km');
+                    exit(0);
+                }
+            }
+        }
+    }
+</script>
